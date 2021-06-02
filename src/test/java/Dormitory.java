@@ -1,7 +1,9 @@
 import Database.Connector;
 import Factory.ConnectorFactory;
+import GUI.LogIn;
+import javafx.application.Application;
+import javafx.stage.Stage;
 
-;
 
 /*
  * @ Author:  Aklice
@@ -9,8 +11,15 @@ import Factory.ConnectorFactory;
  * @ LastChangeTime:18:30
  * @ Description:Clam and Analyze;
  */
-public class Dormitory {
+public class Dormitory extends Application {
+
+    @Override
+
+    public void start(Stage primaryStage){
+        new LogIn();
+    }
+
     public static void main(String[] args) {
-        Connector connector = ConnectorFactory.getConnector();
+        launch();
     }
 }
