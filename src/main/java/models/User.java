@@ -11,15 +11,25 @@ public class User {
     private String serial_number;
     private String name;
     private int building_num;
-    private boolean sex;
+    private String sex;
     private int dormitory_number;
+    private String mail;
+    private String passwd;
+
+    public String getPasswd() {
+        return passwd;
+    }
+
+    public void setPasswd(String passwd) {
+        this.passwd = passwd;
+    }
 
     public User(){}
     public User(String serial_number){
         this.serial_number = serial_number;
     }
 
-    public User(String serial_number, String name, int building_num, boolean sex, int dormitory_number) {
+    public User(String serial_number, String name, int building_num, String sex, int dormitory_number) {
         this.serial_number = serial_number;
         this.name = name;
         this.building_num = building_num;
@@ -51,11 +61,11 @@ public class User {
         this.building_num = building_num;
     }
 
-    public boolean isSex() {
+    public String isSex() {
         return sex;
     }
 
-    public void setSex(boolean sex) {
+    public void setSex(String sex) {
         this.sex = sex;
     }
 
@@ -65,5 +75,13 @@ public class User {
 
     public void setDormitory_number(int dormitory_number) {
         this.dormitory_number = dormitory_number;
+    }
+
+    public String getMail() {
+        return mail;
+    }
+
+    public void setMail(String mail) {
+        this.mail = mail;
     }
 }

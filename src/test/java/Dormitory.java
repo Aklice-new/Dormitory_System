@@ -1,6 +1,7 @@
-import Database.Connector;
 import Factory.ConnectorFactory;
 import GUI.LogIn;
+import Tools.Connector;
+import Tools.Encryptor;
 import javafx.application.Application;
 import javafx.stage.Stage;
 
@@ -16,10 +17,11 @@ public class Dormitory extends Application {
     @Override
 
     public void start(Stage primaryStage){
-        new LogIn();
+        //new LogIn();
     }
 
     public static void main(String[] args) {
-        launch();
+        //launch();
+        Connector connector = ConnectorFactory.getConnector();
     }
 }

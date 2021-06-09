@@ -1,4 +1,5 @@
-package GUI;/*
+package GUI;
+/*
  * @ Author:  Aklice
  * @ CreateTime:2021/6/2
  * @ LastChangeTime:15:39

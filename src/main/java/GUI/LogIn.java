@@ -1,14 +1,13 @@
 package GUI;
 
 
-import Database.Checker;
+import Tools.Checker;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.GridPane;
-import javafx.scene.layout.VBox;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontPosture;
 import javafx.scene.text.Text;
@@ -46,11 +45,6 @@ public class LogIn extends Stage {
         Scene scene = new Scene(gridPane,400 ,600);
         setScene(scene);
         show();
-    }
-    boolean checkInforn(){
-        String str1 = mailFd.getText();
-        String str2 = passwdFd.getText();
-        return new Checker(str1,str2).isRight();
     }
 
 }

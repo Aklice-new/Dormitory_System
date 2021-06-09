@@ -1,6 +1,6 @@
 package Factory;
 
-import Database.Connector;
+import Tools.Connector;
 
 /*
  * @ Author:  Aklice
