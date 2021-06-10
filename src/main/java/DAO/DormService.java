@@ -1,6 +1,10 @@
 package DAO;
 
 
+import models.Dorm;
+
+import java.util.List;
+
 /*
  * @ Author:  Aklice
  * @ CreateTime:2021/5/26
@@ -8,10 +12,10 @@ package DAO;
  * @ Description:Clam and Analyze;
  */
 public interface DormService {
-    void add(DormService dorm);
+    void add(Dorm dorm);
 
     void delete(String serial_number);
 
-    DormService get_By_ID(String serial_number);
+    List<Dorm> get_unoccupied();
 
 }

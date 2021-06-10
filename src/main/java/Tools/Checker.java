@@ -9,35 +9,40 @@ package Tools;
 import DAO.Implements.Admin_Imp;
 import models.User;
 
+import java.awt.peer.SystemTrayPeer;
+
 public class Checker {
     String mail;
     String id;
     String passwd;
-
-    public Checker(String var1, @org.jetbrains.annotations.NotNull String passwd) {
+    User user;
+    public Checker(String var1, String passwd) {
 
         this.passwd = passwd;
         String regex = "\\w[-\\w.+]*@([A-Za-z0-9][-A-Za-z0-9]+\\.)+[A-Za-z]{2,14}";
-        if(passwd.matches(regex)){
+        if(var1.matches(regex)){
             this.mail = var1;
         }
         else
             this.id = var1;
+        System.out.println("你好！欢迎您，亲爱的" + mail + "<------->" + id +" ");
     }
 
-    public boolean isRight(){
+    public int isRight(){
         Admin_Imp root = new Admin_Imp();
-        User temp;
         if(mail == null) {
-            temp = root.get_By_ID(id);
+            user = root.get_By_ID(id);
         }
         else{
-            temp = root.get_By_Mail(mail);
+            user = root.get_By_Mail(mail);
         }
         String base64_passwd = Encryptor.getMD5(passwd);
-        if (temp.getPasswd().equals(base64_passwd)) return true;
-        return false;
+        if (user.getPasswd().trim().equals(base64_passwd)) return user.getUser_level();
+        else
+        return 0;
     }
-
+    public User getUser(){
+        return user;
+    }
 
 }

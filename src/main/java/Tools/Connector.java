@@ -17,7 +17,7 @@ public class Connector {
     public Connector()  {
         try{
             Class.forName(JDBC_Driver);
-            Connection connector = DriverManager.getConnection(JD_URl,USER,PASSWORD);
+            connector = DriverManager.getConnection(JD_URl,USER,PASSWORD);
             System.out.println("connect success");
         }
         catch (SQLException e){

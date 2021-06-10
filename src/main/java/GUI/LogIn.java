@@ -1,6 +1,7 @@
 package GUI;
 
 
+import Listener.ButtonsListener.LoginButton;
 import Tools.Checker;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
@@ -45,6 +46,7 @@ public class LogIn extends Stage {
         Scene scene = new Scene(gridPane,400 ,600);
         setScene(scene);
         show();
+        confirmBn.setOnAction(new LoginButton(this,mailFd,passwdFd));
     }
 
 }

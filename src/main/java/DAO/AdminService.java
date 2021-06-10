@@ -13,7 +13,8 @@ public interface AdminService {
 
     User get_By_ID(String serial_number);
 
-    void delete_By_ID(String serial_number);
+    void delete_By_ID(String serial_number,int level);
 
     void change_Info(User admin);
+
 }

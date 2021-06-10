@@ -11,10 +11,19 @@ public class User {
     private String serial_number;
     private String name;
     private int building_num;
+    private int user_level;
     private String sex;
-    private int dormitory_number;
+    private String dormitory_number;
     private String mail;
     private String passwd;
+
+    public int getUser_level() {
+        return user_level;
+    }
+
+    public void setUser_level(int user_level) {
+        this.user_level = user_level;
+    }
 
     public String getPasswd() {
         return passwd;
@@ -29,12 +38,13 @@ public class User {
         this.serial_number = serial_number;
     }
 
-    public User(String serial_number, String name, int building_num, String sex, int dormitory_number) {
+    public User(String serial_number, String name, int building_num, String sex, String dormitory_number,int user_level) {
         this.serial_number = serial_number;
         this.name = name;
         this.building_num = building_num;
         this.sex = sex;
         this.dormitory_number = dormitory_number;
+        this.user_level = user_level;
     }
 
     public String getSerial_number() {
@@ -69,11 +79,11 @@ public class User {
         this.sex = sex;
     }
 
-    public int getDormitory_number() {
+    public String getDormitory_number() {
         return dormitory_number;
     }
 
-    public void setDormitory_number(int dormitory_number) {
+    public void setDormitory_number(String dormitory_number) {
         this.dormitory_number = dormitory_number;
     }
 

@@ -11,6 +11,7 @@ import Tools.Connector;
 public class ConnectorFactory {
     public static Connector getConnector() {
         try{
+            System.out.println("服务器连接成功");
             return new Connector();
         }
         catch (Exception e){

@@ -3,7 +3,6 @@ package models;
 
 import java.util.List;
 
-import static StcData.Constants.COMMON_SIZE;
 
 /*
  * @ Author:  Aklice
@@ -14,10 +13,13 @@ import static StcData.Constants.COMMON_SIZE;
 
 public class Dorm {
     private String serial_number;
-    private static int size = COMMON_SIZE;
     private int floor;
-    private int tel;
+    private int building;
+    private String tel;
+    private int people_num;
+
     private List<User> dorm_mates;
+
     public Dorm(){}
 
     public String getSerial_number() {
@@ -36,12 +38,30 @@ public class Dorm {
         this.floor = floor;
     }
 
-    public int getTel() {
+    public String getTel() {
         return tel;
     }
 
-    public void setTel(int tel) {
+    public void setTel(String tel) {
         this.tel = tel;
     }
+
+    public int getBuilding() {
+        return building;
+    }
+
+    public void setBuilding(int building) {
+        this.building = building;
+    }
+
+
+    public int getPeople_num() {
+        return people_num;
+    }
+
+    public void setPeople_num(int people_num) {
+        this.people_num = people_num;
+    }
+
 
 }
