@@ -1,6 +1,7 @@
 import Factory.ConnectorFactory;
 import GUI.LogIn;
 import GUI.MainStage_Admin;
+import GUI.StudentRelated;
 import Tools.Connector;
 import Tools.Encryptor;
 import javafx.application.Application;
@@ -19,8 +20,9 @@ public class Dormitory extends Application {
     @Override
 
     public void start(Stage primaryStage){
-        //new MainStage_Admin(new User());
+        // new MainStage_Admin(new User());
         new LogIn();
+        // new StudentRelated();
     }
 
     public static void main(String[] args) {    //name : kiki passwd:kikiyyds

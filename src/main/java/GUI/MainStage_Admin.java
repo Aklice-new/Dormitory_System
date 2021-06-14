@@ -24,6 +24,7 @@ public class MainStage_Admin extends Stage {
     Button user_info;
     Button leave_sch_info;
     Button report_info;
+    Button dorm_info;
     Text basic_information;
     GridPane gridPane;
     VBox vBox;
@@ -36,19 +37,21 @@ public class MainStage_Admin extends Stage {
         gridPane.setVgap(10);
         gridPane.setPadding(new Insets(15,10,20,10));
 
-        //String str = "欢迎" + admin.getName() + "使用宿舍管理系统，您的id是 " + admin.getSerial_number();
-        basic_information = new Text("nihaoya");
+        String str = "欢迎" + admin.getName() + "使用宿舍管理系统，您的id是 " + admin.getSerial_number();
+        basic_information = new Text(str);
 
         vBox = new VBox();
         vBox.setPadding(new Insets(15,10,10,10));
         vBox.setAlignment(Pos.CENTER_LEFT);
         vBox.setSpacing(20);
-        vBox.getChildren().add(user_info = new Button("学生用户信息查询"));
+
+        vBox.getChildren().add(user_info = new Button("学生相关信息查询"));
+        vBox.getChildren().add(dorm_info = new Button("宿舍相关信息查询"));
         vBox.getChildren().add(leave_sch_info = new Button("离校信息查询"));
         vBox.getChildren().add(report_info = new Button("上报信息查询"));
 
         /*
-        为按钮添加时间驱动
+        为按钮添加事件驱动
          */
         user_info.setOnAction(new NewUser());
         leave_sch_info.setOnAction(new LeaveSchInform());

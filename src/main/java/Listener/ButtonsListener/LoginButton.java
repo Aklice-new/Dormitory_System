@@ -33,7 +33,6 @@ public class LoginButton implements EventHandler {
     public void handle(Event event) {
         Checker checker = new Checker(userName.getText(),passwd.getText());
         int option = checker.isRight();
-        System.out.println(option);
         if(option == SUPER_USER){
             // 进入管理员的界面
             user = checker.getUser();

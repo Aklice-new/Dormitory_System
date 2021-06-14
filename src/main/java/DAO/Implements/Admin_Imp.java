@@ -57,6 +57,7 @@ public class Admin_Imp implements AdminService {
             preparedStatement.setString(7, user.getMail());
             preparedStatement.setString(8, user.getPasswd());
             preparedStatement.executeUpdate();
+            System.out.println("added the user");
         } catch (SQLException e) {
             e.printStackTrace();
         }

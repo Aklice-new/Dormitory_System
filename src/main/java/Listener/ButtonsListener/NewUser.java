@@ -5,11 +5,12 @@ package Listener.ButtonsListener;/*
  * @ Description:Clam and Analyze;
  */
 
+import GUI.StudentRelated;
 import javafx.event.Event;
 import javafx.event.EventHandler;
 
 public class NewUser implements EventHandler {
     public void handle(Event event) {
-
+        new StudentRelated();
     }
 }

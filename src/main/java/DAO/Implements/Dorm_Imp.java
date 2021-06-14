@@ -41,7 +41,7 @@ public class Dorm_Imp implements DormService {
 
     public void delete(String serial_number) {
         Connector connection =  ConnectorFactory.getConnector();
-        String sql = "use Dormitory_System;drop from dorm where dormitory_num == ?"; //需要填补adminlist中的一些字段
+        String sql = "use Dormitory_System;drop from dorm where dormitory_num = ?"; //需要填补adminlist中的一些字段
         PreparedStatement preparedStatement = null;
         try {
             preparedStatement = connection.getConnector().prepareStatement(sql);

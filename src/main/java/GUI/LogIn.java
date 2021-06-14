@@ -37,7 +37,7 @@ public class LogIn extends Stage {
         gridPane.setPadding(new Insets(15,10,20,10));
         gridPane.add(title = new Text("欢迎使用宿舍管理系统"),1,0);
         title.setFont(Font.font("Verdana", FontPosture.ITALIC, 20));
-        gridPane.add(new Text("用户名/邮箱 ："),0,1);
+        gridPane.add(new Text("学号/邮箱 ："),0,1);
         gridPane.add(new Text(("密码 ：")),0,2);
         gridPane.add(mailFd = new TextField(),1,1);
         gridPane.add(passwdFd = new TextField(),1,2);

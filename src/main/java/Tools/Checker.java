@@ -37,9 +37,16 @@ public class Checker {
             user = root.get_By_Mail(mail);
         }
         String base64_passwd = Encryptor.getMD5(passwd);
-        if (user.getPasswd().trim().equals(base64_passwd)) return user.getUser_level();
-        else
-        return 0;
+        try{
+            if (user.getPasswd().trim().equals(base64_passwd))
+                return user.getUser_level();
+            else
+                return 0;
+        }
+        catch (Exception e){
+            System.out.println("没用获取到对象" );
+            return 0;
+        }
     }
     public User getUser(){
         return user;
