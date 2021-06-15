@@ -20,11 +20,10 @@ public class Dormitory extends Application {
     @Override
 
     public void start(Stage primaryStage){
-        // new MainStage_Admin(new User());
-        new LogIn();
-        // new StudentRelated();
+        new MainStage_Admin(new User());
+        //new LogIn();
+        //new StudentRelated();
     }
-
     public static void main(String[] args) {    //name : kiki passwd:kikiyyds
         launch();
         // System.out.println(Encryptor.getMD5("kikiyyds"));

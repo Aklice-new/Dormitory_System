@@ -23,21 +23,25 @@ public class AddConfirmListener implements EventHandler {
     public void handle(Event event) {
         int flag = -1;
         User user = new User();
+        user.setUser_level(1);
         for (int i = 0;i < 8;i ++) {
             String now_str = fieldList.get(i).getText();
+            if(now_str.equals("")) {
+                flag = i;
+                break;
+            }
             if(!check(i,now_str,user)){
                 flag = i;
                 break;
             }
         }
         if(flag != -1){
-            JOptionPane.showMessageDialog(null,"信息错误" + flag);
+            JOptionPane.showMessageDialog(null,"信息错误在第" + flag+1 + "行");
         }
         else{
             new Admin_Imp().add_Common(user);
             JOptionPane.showMessageDialog(null,"添加完成");
         }
-
     }
     public AddConfirmListener(List<TextField>fieldList){
         this.fieldList = fieldList;
@@ -49,21 +53,25 @@ public class AddConfirmListener implements EventHandler {
             case 1: user.setName(str);return true;
             case 2: user.setBuilding_num(Integer.valueOf(str));return true;
             case 4: user.setDormitory_number(str);return true;  //可以添加对building_num的限定
-            case 3: if(str == "男" || str == "女") {
+            case 3: if(str.equals("男")  || str.equals("女")) {
                         user.setSex(str);
                         return true;
                     }
                     else return false;
-            case 5: if(regex.matches(str)){
+            case 5: if(str.matches(regex)){
                         user.setMail(str);
                         return true;
                     }
                     else return false;
             case 6: return true;
             case 7: String str1 = fieldList.get(idx - 1).getText();
-                    if(str1 != str)
+                    System.out.println(str1 + str);
+                    if(!str1.equals(str))
                         return false;
-                    else user.setPasswd(Encryptor.getMD5(str));
+                    else {
+                        user.setPasswd(Encryptor.getMD5(str));
+                        return true;
+                    }
         }
         return false;
     }

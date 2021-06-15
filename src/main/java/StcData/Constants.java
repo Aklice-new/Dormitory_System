@@ -1,6 +1,9 @@
 package StcData;
 
 
+import java.util.HashMap;
+import java.util.Map;
+
 /*
  * @ Author:  Aklice
  * @ CreateTime:2021/5/26
@@ -16,4 +19,5 @@ public class Constants {
     public static final int SUPER_USER = 2;
     public static final int COMMON_USER = 1;
     public static final int ADMIN_USER = 3;
+
 }

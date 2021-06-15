@@ -8,7 +8,9 @@ package GUI;
  * @ Description:Clam and Analyze;
  */
 
+import Listener.ButtonsListener.Student_infom.ChangeButton;
 import Listener.ButtonsListener.Student_infom.add_Button;
+import Listener.ButtonsListener.Student_infom.delete_stu;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
@@ -61,10 +63,11 @@ public class StudentRelated extends Stage {
         anotherPane.setVgap(5);
         anotherPane.setPadding(new Insets(10,10,10,10));
         add_stu.setOnAction(new add_Button(anotherPane));
+        change_stu.setOnAction(new ChangeButton(anotherPane));
+        del_stu.setOnAction(new delete_stu(anotherPane));
         gridPane = new GridPane();
         gridPane.setHgap(20);
         gridPane.setVgap(10);
-        //getIcons().add(image);
         gridPane.setPadding(new Insets(15,10,20,10));
         gridPane.add(vBox,0,0);
         gridPane.add(anotherPane,1,0);

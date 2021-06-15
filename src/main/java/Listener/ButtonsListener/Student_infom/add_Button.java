@@ -23,7 +23,6 @@ public class add_Button implements EventHandler {
     @Override
     public void handle(Event event) {
         pane.getChildren().clear();
-        //Map<Integer, TextField>textFieldMap = new HashMap<Integer, TextField>();
         List<TextField>fieldList = new ArrayList<TextField>();
         TextField sno = new TextField(); fieldList.add(sno);
         TextField sname = new TextField(); fieldList.add(sname);

@@ -16,7 +16,6 @@ import java.util.List;
 
 public class ReportNews implements EventHandler {
     public void handle(Event event) {
-        Admin_Imp admin = new Admin_Imp();
-        List<Report>reportList = admin.get_Reporters(1);
+        new ReporterView();
     }
 }

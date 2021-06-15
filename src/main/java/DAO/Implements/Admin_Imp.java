@@ -57,7 +57,6 @@ public class Admin_Imp implements AdminService {
             preparedStatement.setString(7, user.getMail());
             preparedStatement.setString(8, user.getPasswd());
             preparedStatement.executeUpdate();
-            System.out.println("added the user");
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -114,9 +113,10 @@ public class Admin_Imp implements AdminService {
             }
             return user;
         } catch (SQLException e) {
-            e.printStackTrace();
+            //e.printStackTrace();
+            return null;
         }
-        return null;
+
     }
 
     public User get_By_Mail(String mail){
@@ -147,14 +147,13 @@ public class Admin_Imp implements AdminService {
 
     public void delete_By_ID(String serial_number,int level) {
         Connector connection =  ConnectorFactory.getConnector();
-        String sql = "use Dormitory_System;drop * from users where serial_number = ? and user_level < ?"; //需要填补adminlist中的一些字段
+        String sql = "use Dormitory_System;delete  from users where serial_number = ? and user_level < ?"; //需要填补adminlist中的一些字段
         PreparedStatement preparedStatement ;
         try {
             preparedStatement = connection.getConnector().prepareStatement(sql);
             preparedStatement.setString(1,serial_number);
             preparedStatement.setInt(2,level);
             int result = preparedStatement.executeUpdate();
-
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -162,27 +161,39 @@ public class Admin_Imp implements AdminService {
 
     public void change_Info(User admin) {
         Connector connection =  ConnectorFactory.getConnector();
-    }
-
-    public List<Report> get_Reporters(int type){
-        List<Report>reporters_List = new ArrayList<Report>();
-        Connector connection =  ConnectorFactory.getConnector();
-        String sql = "use Dormitory_System;select * from transactions  where dormitory_num = ?"; //需要填补adminlist中的一些字段
+        String sql = "update users set building_num = ? ,dormitory_num = ? where serial_number = ?";
         PreparedStatement preparedStatement ;
         try {
             preparedStatement = connection.getConnector().prepareStatement(sql);
-            preparedStatement.setInt(1,type);
+            preparedStatement.setString(2,admin.getDormitory_number());
+            preparedStatement.setInt(1,admin.getBuilding_num());
+            preparedStatement.setString(3,admin.getSerial_number());
+            int result = preparedStatement.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public List<Report> get_Reporters(String type){
+        List<Report>reporters_List = new ArrayList<Report>();
+        Connector connection =  ConnectorFactory.getConnector();
+        String sql = "use Dormitory_System;select * from transactions where type = ?"; //需要填补adminlist中的一些字段
+        PreparedStatement preparedStatement ;
+        try {
+            preparedStatement = connection.getConnector().prepareStatement(sql);
+            preparedStatement.setString(1,type);
             ResultSet result = preparedStatement.executeQuery();
-            Report report = new Report();
             while(result.next()){
+                Report report = new Report();
                 report.setTel(result.getString("tel"));
                 report.setContent(result.getString("excuse"));
                 report.setDate(result.getString("date_"));
                 report.setDormitory_num(result.getString("dormitory_num"));
                 report.setType(result.getString("type"));
                 report.setStatus(result.getInt("state"));
+                System.out.println(result.getString("excuse"));
+                reporters_List.add(report);
             }
-            reporters_List.add(report);
         } catch (SQLException e) {
             e.printStackTrace();
         }
