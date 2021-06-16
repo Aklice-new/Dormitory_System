@@ -1,12 +1,10 @@
-import Factory.ConnectorFactory;
+import GUI.Common.MainStage_User;
+import GUI.Common.reportInformation;
 import GUI.LogIn;
-import GUI.MainStage_Admin;
-import GUI.StudentRelated;
-import Tools.Connector;
-import Tools.Encryptor;
+import Listener.ButtonsListener.ReportInform;
+import Models.User;
 import javafx.application.Application;
 import javafx.stage.Stage;
-import models.User;
 
 
 /*
@@ -20,13 +18,10 @@ public class Dormitory extends Application {
     @Override
 
     public void start(Stage primaryStage){
-        new MainStage_Admin(new User());
-        //new LogIn();
-        //new StudentRelated();
+        new LogIn();
     }
     public static void main(String[] args) {    //name : kiki passwd:kikiyyds
         launch();
-        // System.out.println(Encryptor.getMD5("kikiyyds"));
-        //Connector connector = ConnectorFactory.getConnector();
+
     }
 }

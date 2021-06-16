@@ -1,38 +1,40 @@
 package Listener.SepcialListener;/*
  * @ Author:  Aklice
- * @ CreateTime:2021/6/15
- * @ LastChangeTime:21:45
+ * @ CreateTime:2021/6/16
+ * @ LastChangeTime:10:55
  * @ Description:Clam and Analyze;
  */
 
-
+import DAO.Implements.Admin_Imp;
+import Models.LeaveSchool;
+import Models.Report;
 import Tools.Comparator_building_num_down;
 import Tools.Comparator_building_num_up;
 import Tools.Comparator_date;
 import Tools.Comparator_status;
+import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.Event;
 import javafx.event.EventHandler;
 import javafx.scene.control.ComboBox;
-import Models.Report;
 
 import java.util.Collections;
 
-public class Refresh implements EventHandler {
+import static javafx.collections.FXCollections.observableArrayList;
+
+public class ReFreshLeave implements EventHandler  {
     ComboBox<String> comboBox;
-    ObservableList<Report> reportObservableList;
+    ObservableList<LeaveSchool> reportObservableList;
 
     @Override
     public void handle(Event event) {
         int selectIndex = comboBox.getSelectionModel().getSelectedIndex();
         switch (selectIndex){
-            case 0:Collections.sort(reportObservableList,new Comparator_date());break;
-            case 1:Collections.sort(reportObservableList,new Comparator_building_num_up());break;
-            case 2:Collections.sort(reportObservableList,new Comparator_building_num_down());break;
-            case 3:Collections.sort(reportObservableList,new Comparator_status());break;
+            case 0: reportObservableList = observableArrayList(new Admin_Imp().get_LeaveSchool(0));break;
+            case 1: reportObservableList = observableArrayList(new Admin_Imp().get_LeaveSchool(1));break;
         }
     }
-    public Refresh(ComboBox<String> comboBox, ObservableList<Report> reportObservableList){
+    public ReFreshLeave(ComboBox<String> comboBox, ObservableList<LeaveSchool> reportObservableList){
         this.comboBox = comboBox;
         this.reportObservableList = reportObservableList;
     }

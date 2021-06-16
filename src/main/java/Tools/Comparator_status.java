@@ -5,13 +5,13 @@ package Tools;/*
  * @ Description:Clam and Analyze;
  */
 
-import models.Report;
+import Models.Report;
 
 import java.util.Comparator;
 
 public class Comparator_status implements Comparator<Report> {
     public int compare(Report o1, Report o2) {
-        if(o1.getStatus() <= o2.getStatus()) return 1;
+        if(o1.getState() <= o2.getState()) return 1;
         else return 0;
     }
 }

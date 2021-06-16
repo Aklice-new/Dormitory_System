@@ -1,8 +1,8 @@
 package Factory;
 
-import models.Admin;
-import models.Dorm;
-import models.User;
+import Models.Admin;
+import Models.Dorm;
+import Models.User;
 
 
 /*

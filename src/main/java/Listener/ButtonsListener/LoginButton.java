@@ -6,15 +6,17 @@ package Listener.ButtonsListener;
  * @ Description:Clam and Analyze;
  */
 
-import GUI.MainStage_Admin;
-import GUI.MainStage_User;
+import GUI.Admin.MainStage_Admin;
+import GUI.Common.MainStage_User;
 import Tools.Checker;
 import javafx.event.Event;
 import javafx.event.EventHandler;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
-import models.User;
+import Models.User;
 
+
+import javax.swing.*;
 
 import static StcData.Constants.COMMON_USER;
 import static StcData.Constants.SUPER_USER;
@@ -33,6 +35,7 @@ public class LoginButton implements EventHandler {
     public void handle(Event event) {
         Checker checker = new Checker(userName.getText(),passwd.getText());
         int option = checker.isRight();
+        System.out.println(option);
         if(option == SUPER_USER){
             // 进入管理员的界面
             user = checker.getUser();
@@ -43,11 +46,11 @@ public class LoginButton implements EventHandler {
             // 进入用户界面
             user = checker.getUser();
             stage.close();
-            //new MainStage_User(user);
+            new MainStage_User(user);
         }
         else{
             // 退出提示密码错误
-
+            JOptionPane.showMessageDialog(null,"密码错误或账户不存在");
         }
     }
 }

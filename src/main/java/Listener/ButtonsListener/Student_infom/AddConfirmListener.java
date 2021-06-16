@@ -9,9 +9,8 @@ import DAO.Implements.Admin_Imp;
 import Tools.Encryptor;
 import javafx.event.Event;
 import javafx.event.EventHandler;
-import javafx.scene.control.Dialog;
 import javafx.scene.control.TextField;
-import models.User;
+import Models.User;
 
 import javax.swing.*;
 import java.util.List;

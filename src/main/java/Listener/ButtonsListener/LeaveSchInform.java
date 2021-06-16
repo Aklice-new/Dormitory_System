@@ -5,16 +5,12 @@ package Listener.ButtonsListener;/*
  * @ Description:Clam and Analyze;
  */
 
+import GUI.Admin.LeaveSchoolView;
 import javafx.event.Event;
 import javafx.event.EventHandler;
-import javafx.scene.Group;
 
 public class LeaveSchInform implements EventHandler {
-    Group  group = null;
-
-//    public LeaveSchInform(Group group){}
-
     public void handle(Event event) {
-
+        new LeaveSchoolView();
     }
 }

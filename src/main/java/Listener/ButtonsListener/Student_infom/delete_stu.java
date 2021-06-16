@@ -6,7 +6,6 @@ package Listener.ButtonsListener.Student_infom;/*
  */
 
 import DAO.Implements.Admin_Imp;
-import Factory.UserFactory;
 import javafx.event.ActionEvent;
 import javafx.event.Event;
 import javafx.event.EventHandler;
@@ -14,7 +13,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.GridPane;
-import models.User;
+import Models.User;
 
 import javax.swing.*;
 

@@ -1,4 +1,4 @@
-package GUI;
+package GUI.Admin;
 
 
 /*
@@ -9,6 +9,7 @@ package GUI;
  */
 
 import Listener.ButtonsListener.Student_infom.ChangeButton;
+import Listener.ButtonsListener.Student_infom.GetButton;
 import Listener.ButtonsListener.Student_infom.add_Button;
 import Listener.ButtonsListener.Student_infom.delete_stu;
 import javafx.geometry.Insets;
@@ -64,6 +65,7 @@ public class StudentRelated extends Stage {
         anotherPane.setPadding(new Insets(10,10,10,10));
         add_stu.setOnAction(new add_Button(anotherPane));
         change_stu.setOnAction(new ChangeButton(anotherPane));
+        get_stu.setOnAction(new GetButton(anotherPane));
         del_stu.setOnAction(new delete_stu(anotherPane));
         gridPane = new GridPane();
         gridPane.setHgap(20);

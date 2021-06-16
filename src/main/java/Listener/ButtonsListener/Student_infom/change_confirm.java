@@ -10,7 +10,7 @@ import Factory.UserFactory;
 import javafx.event.Event;
 import javafx.event.EventHandler;
 import javafx.scene.control.TextField;
-import models.User;
+import Models.User;
 
 public class change_confirm implements EventHandler {
     TextField building_num;

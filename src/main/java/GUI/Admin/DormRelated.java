@@ -1,4 +1,4 @@
-package GUI;/*
+package GUI.Admin;/*
  * @ Author:  Aklice
  * @ CreateTime:2021/6/11
  * @ LastChangeTime:10:52

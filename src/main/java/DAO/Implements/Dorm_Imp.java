@@ -2,10 +2,8 @@ package DAO.Implements;
 
 import DAO.DormService;
 import Factory.ConnectorFactory;
-import Factory.UserFactory;
 import Tools.Connector;
-import models.Dorm;
-import models.User;
+import Models.Dorm;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;

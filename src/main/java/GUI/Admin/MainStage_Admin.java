@@ -1,4 +1,4 @@
-package GUI;
+package GUI.Admin;
 /*
  * @ Author:  Aklice
  * @ CreateTime:2021/6/2
@@ -17,7 +17,7 @@ import javafx.scene.layout.GridPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
-import models.User;
+import Models.User;
 
 
 public class MainStage_Admin extends Stage {
@@ -57,7 +57,6 @@ public class MainStage_Admin extends Stage {
         leave_sch_info.setOnAction(new LeaveSchInform());
         report_info.setOnAction(new ReportNews());
         gridPane.add(vBox,1,1);
-        //gridPane.add(new Pane(),1,2);
         gridPane.add(basic_information,1,0);
         setScene(new Scene(gridPane,500,600));
         show();

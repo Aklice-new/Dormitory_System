@@ -7,9 +7,7 @@ package Tools;
  */
 
 import DAO.Implements.Admin_Imp;
-import models.User;
-
-import java.awt.peer.SystemTrayPeer;
+import Models.User;
 
 public class Checker {
     String mail;

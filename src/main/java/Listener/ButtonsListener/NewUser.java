@@ -5,7 +5,7 @@ package Listener.ButtonsListener;/*
  * @ Description:Clam and Analyze;
  */
 
-import GUI.StudentRelated;
+import GUI.Admin.StudentRelated;
 import javafx.event.Event;
 import javafx.event.EventHandler;
 

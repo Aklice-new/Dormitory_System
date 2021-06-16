@@ -1,4 +1,4 @@
-package GUI;/*
+package GUI.Admin;/*
  * @ Author:  Aklice
  * @ CreateTime:2021/6/10
  * @ LastChangeTime:15:11
@@ -7,7 +7,6 @@ package GUI;/*
 
 import DAO.Implements.Admin_Imp;
 import Listener.SepcialListener.Refresh;
-import Tools.Comparator_date;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.geometry.Insets;
@@ -19,7 +18,7 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Font;
 import javafx.stage.Stage;
-import models.Report;
+import Models.Report;
 
 import java.util.Arrays;
 import java.util.List;
@@ -48,7 +47,7 @@ public class ReporterView extends Stage {
         report_date.setCellValueFactory(new PropertyValueFactory<>("date"));
         type.setCellValueFactory(new PropertyValueFactory<>("type"));
         content.setCellValueFactory(new PropertyValueFactory<>("content"));
-        status.setCellValueFactory(new PropertyValueFactory<>("status"));
+        status.setCellValueFactory(new PropertyValueFactory<>("state"));
         tel.setCellValueFactory(new PropertyValueFactory<>("tel"));
 
         /*

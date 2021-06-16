@@ -1,7 +1,7 @@
 package DAO;
 
 
-import models.Dorm;
+import Models.Dorm;
 
 import java.util.List;
 

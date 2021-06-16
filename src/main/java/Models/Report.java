@@ -1,4 +1,4 @@
-package models;/*
+package Models;/*
  * @ Author:  Aklice
  * @ CreateTime:2021/6/9
  * @ LastChangeTime:19:52
@@ -15,7 +15,7 @@ public class Report {
     private SimpleStringProperty date;
     private SimpleStringProperty type;
     private SimpleStringProperty tel;
-    private SimpleIntegerProperty status;
+    private SimpleIntegerProperty state;
 
     public Report() {
         content = new SimpleStringProperty();
@@ -23,7 +23,7 @@ public class Report {
         date = new SimpleStringProperty();
         type = new SimpleStringProperty();
         tel = new SimpleStringProperty();
-        status = new SimpleIntegerProperty();
+        state = new SimpleIntegerProperty();
     }
 
     public String getContent() {
@@ -66,10 +66,10 @@ public class Report {
         this.tel.set(tel);
     }
 
-    public int getStatus() {
-        return status.get();
+    public int getState() {
+        return state.get();
     }
-    public void setStatus(int status) {
-        this.status.set(status);
+    public void setState(int status) {
+        this.state.set(status);
     }
 }

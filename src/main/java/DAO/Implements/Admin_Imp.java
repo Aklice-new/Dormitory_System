@@ -1,16 +1,16 @@
 package DAO.Implements;
 
 import DAO.AdminService;
+import Models.LeaveSchool;
 import Tools.Connector;
 import Factory.ConnectorFactory;
 import Factory.UserFactory;
-import models.Report;
-import models.User;
+import Models.Report;
+import Models.User;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -32,7 +32,7 @@ public class Admin_Imp implements AdminService {
             preparedStatement.setInt(5,admin.getBuilding_num());
             preparedStatement.setString(1,admin.getSerial_number());
             preparedStatement.setString(2,admin.getName());
-            preparedStatement.setString(3, admin.isSex());
+            preparedStatement.setString(3, admin.getSex());
             preparedStatement.setString(6, admin.getDormitory_number());
             preparedStatement.setString(7, admin.getMail());
             preparedStatement.setString(8, admin.getPasswd());
@@ -52,7 +52,7 @@ public class Admin_Imp implements AdminService {
             preparedStatement.setInt(5,user.getBuilding_num());
             preparedStatement.setString(1,user.getSerial_number());
             preparedStatement.setString(2,user.getName());
-            preparedStatement.setString(3, user.isSex());
+            preparedStatement.setString(3, user.getSex());
             preparedStatement.setString(6, user.getDormitory_number());
             preparedStatement.setString(7, user.getMail());
             preparedStatement.setString(8, user.getPasswd());
@@ -66,7 +66,7 @@ public class Admin_Imp implements AdminService {
 
         List<User>userList = new ArrayList<User>();
         Connector connection =  ConnectorFactory.getConnector();
-        String sql = "use Dormitory_System;select * from users where dormitory = ?"; //需要填补adminlist中的一些字段
+        String sql = "use Dormitory_System;select * from users where dormitory_num = ?"; //需要填补adminlist中的一些字段
         PreparedStatement preparedStatement ;
         try {
             preparedStatement = connection.getConnector().prepareStatement(sql);
@@ -190,8 +190,7 @@ public class Admin_Imp implements AdminService {
                 report.setDate(result.getString("date_"));
                 report.setDormitory_num(result.getString("dormitory_num"));
                 report.setType(result.getString("type"));
-                report.setStatus(result.getInt("state"));
-                System.out.println(result.getString("excuse"));
+                report.setState(result.getInt("state"));
                 reporters_List.add(report);
             }
         } catch (SQLException e) {
@@ -200,4 +199,28 @@ public class Admin_Imp implements AdminService {
         return reporters_List;
     }
 
+    public List<LeaveSchool> get_LeaveSchool(int type) {
+        List<LeaveSchool>reporters_List = new ArrayList<LeaveSchool>();
+        Connector connection =  ConnectorFactory.getConnector();
+        String sql = "use Dormitory_System;select * from leaves where state = ?;"; //需要填补adminlist中的一些字段
+        PreparedStatement preparedStatement ;
+        try {
+            preparedStatement = connection.getConnector().prepareStatement(sql);
+            preparedStatement.setInt(1,type);
+            ResultSet result = preparedStatement.executeQuery();
+            while(result.next()){
+                LeaveSchool report = new LeaveSchool();
+                report.setSerial_number(result.getString("serial_number"));
+                report.setName(result.getString("name"));
+                report.setReason(result.getString("reason"));
+                report.setState(result.getInt("state"));
+                report.setMail(result.getString("mail"));
+                report.setResult(result.getString("result"));
+                reporters_List.add(report);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return reporters_List;
+    }
 }

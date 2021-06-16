@@ -1,7 +1,7 @@
 package DAO;
 
-import models.Report;
-import models.User;
+import Models.Report;
+import Models.User;
 
 import java.util.List;
 

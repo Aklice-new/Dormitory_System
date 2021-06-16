@@ -7,6 +7,7 @@ import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.GridPane;
 import javafx.scene.text.Font;
@@ -24,7 +25,7 @@ public class LogIn extends Stage {
     Button confirmBn;   //确认按钮
     Button cancelBn;    //取消按钮
     TextField mailFd;   //邮箱/用户名输入栏
-    TextField passwdFd; //密码栏
+    PasswordField passwdFd; //密码栏
     Text title;
     GridPane gridPane;
     public LogIn(){
@@ -40,7 +41,7 @@ public class LogIn extends Stage {
         gridPane.add(new Text("学号/邮箱 ："),0,1);
         gridPane.add(new Text(("密码 ：")),0,2);
         gridPane.add(mailFd = new TextField(),1,1);
-        gridPane.add(passwdFd = new TextField(),1,2);
+        gridPane.add(passwdFd = new PasswordField(),1,2);
         gridPane.add(confirmBn = new Button("确认"),1,3);
         gridPane.add(cancelBn = new Button("取消"),2,3);
         Scene scene = new Scene(gridPane,400 ,600);

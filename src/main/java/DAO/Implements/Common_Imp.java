@@ -4,8 +4,8 @@ import DAO.CommonService;
 import Factory.ConnectorFactory;
 import Factory.UserFactory;
 import Tools.Connector;
-import models.Report;
-import models.User;
+import Models.Report;
+import Models.User;
 
 ;import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -64,7 +64,7 @@ public class Common_Imp implements CommonService {
             preparedStatement.setString(3,report.getContent());
             preparedStatement.setString(4,report.getTel());
             preparedStatement.setString(5,report.getDate());
-            preparedStatement.setInt(6,report.getStatus());
+            preparedStatement.setInt(6,report.getState());
 
             preparedStatement.executeUpdate();
         }

@@ -5,14 +5,9 @@ package Listener.ButtonsListener;/*
  * @ Description:Clam and Analyze;
  */
 
-import DAO.Implements.Admin_Imp;
-import GUI.ReporterView;
+import GUI.Admin.ReporterView;
 import javafx.event.Event;
 import javafx.event.EventHandler;
-import models.Report;
-
-import java.util.ArrayList;
-import java.util.List;
 
 public class ReportNews implements EventHandler {
     public void handle(Event event) {
